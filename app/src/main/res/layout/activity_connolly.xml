@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:translationY="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/james_connolly"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Brief History"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="James Connolly was a man of formidable ideas and remarkable vision. His values, his ideas and his ideals remain as inspiring and as relevant as ever, over 100 years after he was executed."
+            android:translationY="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="491dp"
+            android:src="@drawable/james_connolly_family" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Connolly was born of humble origins and knew poverty at first hand all of his life. Despite having left school at a very early age, he was driven to learn and to understand the world around him. His appetite for knowledge was ferocious. Despite his origins, he went on to write some of the most incisive and original works of political philosophy and historical analysis ever written on these Islands and indeed in the world. Sometimes in a historical period an exceptional individual emerges who seems to grasp the key moral and political challenges of a generation." />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="423dp"
+            android:src="@drawable/building_workers_organize" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Like Wolfe Tone and Michael Davitt, like Karl Marx and Friedrich Engels, like Abraham Lincoln and Martin Luther King, like Fidel Castro and Nelson Mandela, like Countess Markievicz and Maire Drum, Connolly understood the yearning for true emancipation." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Freedom without real equality, freedom without social justice, is a hollow freedom. It was and is the freedom to starve, to be evicted and driven into poverty. Connolly was implacably opposed to sectarianism and racism, for he knew these were used to divide one set of workers from another. He was a feminist before the word had been created. He had a life-long commitment to social justice, to trade unionism and trade union values."
+            android:translationY="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="He had an incisive understanding of Irish history and the role of class and economics in the shaping of our past and our present. His personal commitment to freedom, not just Irish freedom, but to the freedom of others, marks James Connolly out as one of the greatest political and trade union leaders of the 20th Century."
+            android:translationY="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="60dp"
+            android:text="Below is a short video clip explaining the 1916 Easter Rising at the GPO in Dublin, Ireland. James Connolly played a significant role in the rebellion against the British Empire on Easter 1916."
+            android:translationY="45dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <VideoView
+                android:id="@+id/connolly_video"
+                android:background="#0000"
+                android:layout_width="match_parent"
+                android:layout_height="268dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp"
+                android:layout_marginBottom="30dp"/>
+        </FrameLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Theme.AppCompat.Light">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/Theme.AppCompat.Light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nav_header"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:openDrawer="start">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/menu_header"
+                app:menu="@menu/nav_menu" />
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

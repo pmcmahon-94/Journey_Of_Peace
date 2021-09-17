@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/belfast"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Theme.AppCompat.Light">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/Theme.AppCompat.Light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nav_header"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="253dp"
+        android:text="WELCOME"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="50sp"
+        android:translationY="160dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This tour will invite you to learn about various historical events that occurred throughout the conflict in NI and the journey to peace."
+        android:textSize="14dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        />
+
+    <Button
+        android:id="@+id/journey"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="journey"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:translationY="40dp" />
+
+    <Button
+        android:id="@+id/camera"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="camera"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:translationY="50dp" />
+
+    <Button
+        android:id="@+id/locations"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="locations"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:translationY="60dp" />
+
+</LinearLayout>
