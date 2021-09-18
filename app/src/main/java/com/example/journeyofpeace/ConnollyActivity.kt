@@ -13,28 +13,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class ConnollyActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
+class ConnollyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connolly)
-
-        //create toolbar
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.nav_view)
-        val Toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, 0, 0
-        )
-        drawerLayout.addDrawerListener(Toggle)
-        Toggle.syncState()
-        navigationView.setNavigationItemSelectedListener(this)
 
         val urlString = "android.resource://com.example.journeyofpeace/" + R.raw.easter_rising
 
@@ -44,9 +27,5 @@ class ConnollyActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         val videoURI = Uri.parse(urlString)
         videoView.setMediaController(mediaController)
         videoView.setVideoURI(videoURI)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("Not yet implemented")
     }
 }
