@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JourneyOfPeace">
         <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity
             android:name=".JourneyActivity"
             android:exported="true" />
 
