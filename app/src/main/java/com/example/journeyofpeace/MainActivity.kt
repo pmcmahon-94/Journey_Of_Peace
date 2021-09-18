@@ -37,12 +37,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val journey = findViewById<View>(R.id.journey) as Button
         val locations = findViewById<View>(R.id.locations) as Button
+        val camera = findViewById<View>(R.id.camera) as Button
 
         journey.setOnClickListener {
             Toast.makeText(this@MainActivity,
                 "journey",
                 Toast.LENGTH_SHORT).show()
             val intent = Intent(this, JourneyActivity::class.java)
+            startActivity(intent)
+        }
+
+        camera.setOnClickListener {
+            Toast.makeText(this@MainActivity,
+                "camera",
+                Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ConnollyActivity::class.java)
             startActivity(intent)
         }
 
@@ -63,7 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(baseContext, "home", Toast.LENGTH_SHORT).show()
             }
             R.id.about_us -> {
-                Toast.makeText(baseContext, "about us", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "about", Toast.LENGTH_SHORT).show()
+                val intentAbout = Intent(this, AboutActivity::class.java)
+                startActivity(intentAbout)
             }
         }
         return true
