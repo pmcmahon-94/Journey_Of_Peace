@@ -5,4 +5,9 @@
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
     <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
     <string name="permission_required_toast">Location permission is required for this demo.</string>
+
+    <string name="failteInfo">Fáilte Feirste Thiar (Welcome to West Belfast) took the opportunity arising from peace to develop the West Belfast Tourism product, develop the tourism infrastructure; support tourism related business and social enterprises, train local people as tour guides, promote local social and economic regeneration via small business development and job creation.
+    We market the uniqueness of West Belfast as a tourist attraction, re-branding the area as a place to visit which provides a quality tourist product and customer satisfaction.</string>
+
+    <string name="failteInfo1">Fáilte Feirste Thiar acts as a role model, a leader and living example in what can be achieved when local communities work collaboratively and in partnership with Government departments, tourism promoters and other stakeholders to create employment, opportunities and to contribute to the portrayal of an image of a community - confident, welcoming and vibrant.</string>
 </resources>
