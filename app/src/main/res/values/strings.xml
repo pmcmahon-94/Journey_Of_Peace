@@ -10,4 +10,39 @@
     We market the uniqueness of West Belfast as a tourist attraction, re-branding the area as a place to visit which provides a quality tourist product and customer satisfaction.</string>
 
     <string name="failteInfo1">Fáilte Feirste Thiar acts as a role model, a leader and living example in what can be achieved when local communities work collaboratively and in partnership with Government departments, tourism promoters and other stakeholders to create employment, opportunities and to contribute to the portrayal of an image of a community - confident, welcoming and vibrant.</string>
+    <string name="locations">locations</string>
+    <string name="camera">camera</string>
+    <string name="journey">journey</string>
+    <string name="welcome_text">WELCOME</string>
+    <string name="info_block_text">This tour will invite you to learn about various historical events that occurred throughout the conflict in NI and the journey to peace.</string>
+    <string name="contact_us_text">CONTACT US</string>
+    <string name="address_title">Address</string>
+    <string name="address_text">Belfast // 217 Falls Road</string>
+    <string name="email_title">Email</string>
+    <string name="email_text">info@visitwestbelfast.com</string>
+    <string name="phone_title">Phone</string>
+    <string name="phone_text">02890 241 100</string>
+    <string name="social_media_text">Follow us via facebook // twitter</string>
+    <string name="about_title">ABOUT FAILTE FEIRSTE THIAR</string>
+    <string name="journey_activity_title">JOURNEY OF PEACE TOUR</string>
+    <string name="radio_failte_title">Radio Failte</string>
+    <string name="radio_failte_text">Raidió Fáilte provides a community radio service to the Irish language community, helping to support and spread the the Irish language in Belfast and around the world.</string>
+    <string name="mural_wall_title">International Mural Wall</string>
+    <string name="mural_wall_text">Along the Falls Road are the mural walls of West Belfast. Described as Europe\'s largest public art gallery. The murals highlight political and social issues across the globe.</string>
+    <string name="bobby_sands_title">Bobby Sands Mural</string>
+    <string name="bobby_sands_text">Painted in 1998, this mural depicts the smiling image, often considered iconic of IRA leader Bobby Sands. Sands led the hunger strike while imprisoned in the H block of Long Kesh Prison.</string>
+    <string name="clonard_title">Clonard Monastery</string>
+    <string name="clonard_text">Clonard Monastery in West Belfast remains a symbol of dialogue and encounter in post-conflict Northern Ireland. it was the setting for peace talks that would eventually lead to the historic Good Friday Agreement in 1998.</string>
+    <string name="connolly_title">Aras Ui Chonghaile</string>
+    <string name="connolly_text">Also known as the James Connolly Centre. The centre depicts the life and political beliefs of one of Ireland\'s most well known historical leaders James Connolly.</string>
+    <string name="milltown_title">Milltown Cemetery</string>
+    <string name="milltown_text">Milltown Cemetery contains a republican plot where former IRA members are buried. In 1988, an act of violence occurred at the burial of 3 former IRA members.</string>
+    <string name="brief_history_title">Brief History</string>
+    <string name="connolly_info">James Connolly was a man of formidable ideas and remarkable vision. His values, his ideas and his ideals remain as inspiring and as relevant as ever, over 100 years after he was executed.</string>
+    <string name="connolly_info1">Connolly was born of humble origins and knew poverty at first hand all of his life. Despite having left school at a very early age, he was driven to learn and to understand the world around him. His appetite for knowledge was ferocious. Despite his origins, he went on to write some of the most incisive and original works of political philosophy and historical analysis ever written on these Islands and indeed in the world. Sometimes in a historical period an exceptional individual emerges who seems to grasp the key moral and political challenges of a generation.</string>
+    <string name="connolly_info2">Like Wolfe Tone and Michael Davitt, like Karl Marx and Friedrich Engels, like Abraham Lincoln and Martin Luther King, like Fidel Castro and Nelson Mandela, like Countess Markievicz and Maire Drum, Connolly understood the yearning for true emancipation.</string>
+    <string name="connolly_info3">Freedom without real equality, freedom without social justice, is a hollow freedom. It was and is the freedom to starve, to be evicted and driven into poverty. Connolly was implacably opposed to sectarianism and racism, for he knew these were used to divide one set of workers from another. He was a feminist before the word had been created. He had a life-long commitment to social justice, to trade unionism and trade union values.</string>
+    <string name="connolly_info4">He had an incisive understanding of Irish history and the role of class and economics in the shaping of our past and our present. His personal commitment to freedom, not just Irish freedom, but to the freedom of others, marks James Connolly out as one of the greatest political and trade union leaders of the 20th Century.</string>
+    <string name="connolly_video_info">Below is a short video clip explaining the 1916 Easter Rising at the GPO in Dublin, Ireland. James Connolly played a significant role in the rebellion against the British Empire on Easter 1916.</string>
+    <string name="ar_experience_text">AR experience</string>
 </resources>
