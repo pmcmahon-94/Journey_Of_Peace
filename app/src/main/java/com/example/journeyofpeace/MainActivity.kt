@@ -70,10 +70,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.Home -> {
                 Toast.makeText(baseContext, "home", Toast.LENGTH_SHORT).show()
+                val intentHome = Intent(this, MainActivity::class.java)
+                startActivity(intentHome)
             }
             R.id.about_us -> {
                 Toast.makeText(baseContext, "about", Toast.LENGTH_SHORT).show()
                 val intentAbout = Intent(this, AboutActivity::class.java)
+                startActivity(intentAbout)
+            }
+            R.id.contact_us -> {
+                Toast.makeText(baseContext, "contact", Toast.LENGTH_SHORT).show()
+                val intentAbout = Intent(this, ContactActivity::class.java)
                 startActivity(intentAbout)
             }
         }
