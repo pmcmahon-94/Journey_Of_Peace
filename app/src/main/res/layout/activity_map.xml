@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/layout_map"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <fragment
-        class="com.google.android.gms.maps.SupportMapFragment"
-        android:id="@+id/map_fragment"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        map:cameraBearing="112.5"
-        map:cameraTargetLat="54.595"
-        map:cameraTargetLng="-5.964"
-        map:cameraTilt="30"
-        map:cameraZoom="13"
-        map:mapType="normal"
-        map:uiCompass="true"
-        map:uiRotateGestures="true"
-        map:uiScrollGestures="true"
-        map:uiTiltGestures="true"
-        map:uiZoomControls="false"
-        map:uiZoomGestures="true"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF4CAF50">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nav_title"
+                android:text="@string/nav_header"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/map_fragment"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            map:cameraBearing="112.5"
+            map:cameraTargetLat="54.595"
+            map:cameraTargetLng="-5.964"
+            map:cameraTilt="30"
+            map:cameraZoom="13"
+            map:mapType="normal"
+            map:uiCompass="true"
+            map:uiRotateGestures="true"
+            map:uiScrollGestures="true"
+            map:uiTiltGestures="true"
+            map:uiZoomControls="false"
+            map:uiZoomGestures="true" />
+    </FrameLayout>
+
+</LinearLayout>
