@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.example.journeyofpeace.PermissionUtils.PermissionDeniedDialog.Companion.newInstance
 import com.example.journeyofpeace.PermissionUtils.isPermissionGranted
 import com.example.journeyofpeace.PermissionUtils.requestPermission
@@ -29,6 +30,7 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
     GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
     ActivityCompat.OnRequestPermissionsResultCallback {
 
+    private lateinit var toolbar: Toolbar
     private lateinit var myMap: GoogleMap
     private lateinit var mapFragment: SupportMapFragment
     lateinit var geofencingClient: GeofencingClient
@@ -63,6 +65,11 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+
+        //create toolbar
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -222,7 +229,7 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
         myMap.addCircle(circleOptions)
     }
 
-    //@SuppressLint("MissingPermission")
+    @SuppressLint("MissingPermission")
     private fun addGeofence(latLng: LatLng, radius: Int) {
         val geofence = geofenceHelper.getGeofence(GEOFENCE_ID,
             latLng,

@@ -1,169 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:id="@+id/layout_journey"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:translationY="20dp">
-        <TextView
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF4CAF50">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JOURNEY OF PEACE TOUR"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="20sp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nav_title"
+                android:text="@string/nav_header"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Radio Failte"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="20dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:translationY="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Raidió Fáilte provides a community radio service to the Irish language community, helping to support and spread the the Irish language in Belfast and around the world."
-            android:translationY="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/journey_activity_title"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="20sp" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="249dp"
-            android:gravity="center"
-            android:src="@drawable/radio_failte"
-            android:translationY="25dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_failte_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="20dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="International Mural Wall"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="55dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_failte_text"
+                android:translationY="20dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Along the Falls Road are the mural walls of West Belfast. Described as Europe's largest public art gallery. The murals highlight political and social issues across the globe."
-            android:translationY="55dp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="249dp"
+                android:gravity="center"
+                android:src="@drawable/radio_failte"
+                android:translationY="25dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:gravity="center"
-            android:src="@drawable/nhs_mural"
-            android:translationY="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mural_wall_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="55dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bobby Sands Mural"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mural_wall_text"
+                android:translationY="55dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Painted in 1998, this mural depicts the smiling image, often considered iconic of IRA leader Bobby Sands. Sands led the hunger strike while imprisoned in the H block of Long Kesh Prison."
-            android:translationY="30dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:gravity="center"
+                android:src="@drawable/nhs_mural"
+                android:translationY="30dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:gravity="center"
-            android:src="@drawable/bobby_sands_mural"
-            android:translationY="15dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bobby_sands_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="30dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Clonard Monastery"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bobby_sands_text"
+                android:translationY="30dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Clonard Monastery in West Belfast remains a symbol of dialogue and encounter in post-conflict Northern Ireland. it was the setting for peace talks that would eventually lead to the historic Good Friday Agreement in 1998."
-            android:translationY="30dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:gravity="center"
+                android:src="@drawable/bobby_sands_mural"
+                android:translationY="15dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:gravity="center"
-            android:src="@drawable/clonard"
-            android:translationY="15dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clonard_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="30dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Aras Ui Chonghaile"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clonard_text"
+                android:translationY="30dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Also known as the James Connolly Centre. The centre depicts the life and political beliefs of one of Ireland's most well known historical leaders James Connolly."
-            android:translationY="30dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:gravity="center"
+                android:src="@drawable/clonard"
+                android:translationY="15dp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:gravity="center"
-            android:src="@drawable/connolly_centre"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/connolly_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="30dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Milltown Cemetery"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:background="#FF4CAF50"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:translationY="0dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/connolly_text"
+                android:translationY="30dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Milltown Cemetery contains a republican plot where former IRA members are buried. In 1988, an act of violence occurred at the burial of 3 former IRA members."
-            android:translationY="0dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:gravity="center"
+                android:src="@drawable/connolly_centre"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:gravity="center"
-            android:src="@drawable/milltown"
-            android:translationY="0dp"
-            android:layout_marginBottom="80dp"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/milltown_title"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="#FF4CAF50"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:translationY="0dp"/>
 
-</ScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/milltown_text"
+                android:translationY="0dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:gravity="center"
+                android:src="@drawable/milltown"
+                android:translationY="0dp"
+                android:layout_marginBottom="80dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
