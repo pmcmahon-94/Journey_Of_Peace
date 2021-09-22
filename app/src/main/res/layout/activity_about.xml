@@ -1,48 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/about_activity"
-    android:background="@color/white"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp"
-    android:orientation="vertical"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:translationY="20dp">
+    android:orientation="vertical">
 
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_title"
-        android:textColor="@color/white"
-        android:background="#FF4CAF50"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="19sp"
-        />
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF4CAF50">
 
-    <ImageView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nav_title"
+                android:text="@string/nav_header"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="156dp"
-        android:src="@drawable/logos" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:translationY="20dp"
+        tools:ignore="ContentDescription">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_title"
+            android:textColor="@color/white"
+            android:background="#FF4CAF50"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="19sp"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/failteInfo"
-        android:translationY="10dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:src="@drawable/logos" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/failteInfo1"
-        android:translationY="20dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/failteInfo"
+            android:translationY="10dp" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="156dp"
-        android:src="@drawable/failte"
-        android:translationY="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/failteInfo1"
+            android:translationY="20dp" />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:src="@drawable/failte"
+            android:translationY="20dp"/>
+
+    </LinearLayout>
 </LinearLayout>
