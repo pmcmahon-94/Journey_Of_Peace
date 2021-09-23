@@ -44,6 +44,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/about_title"
             android:text="@string/about_title"
             android:textColor="@color/white"
             android:background="#FF4CAF50"
@@ -55,23 +56,27 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="156dp"
+            android:id="@+id/about_logos"
             android:src="@drawable/logos" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/failte_info"
             android:text="@string/failteInfo"
             android:translationY="10dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/failte_info1"
             android:text="@string/failteInfo1"
             android:translationY="20dp" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="156dp"
+            android:id="@+id/about_image"
             android:src="@drawable/failte"
             android:translationY="20dp"/>
 
