@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layout_journey"
@@ -32,7 +31,8 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -50,6 +50,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/journey_activity_title"
                 android:text="@string/journey_activity_title"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -58,6 +59,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/radio_failte_title"
                 android:text="@string/radio_failte_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -69,6 +71,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/radio_failte_text"
                 android:text="@string/radio_failte_text"
                 android:translationY="20dp" />
 
@@ -82,6 +85,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/mural_wall_title"
                 android:text="@string/mural_wall_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -93,6 +97,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/mural_wall_text"
                 android:text="@string/mural_wall_text"
                 android:translationY="55dp" />
 
@@ -106,6 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/bobby_sands_title"
                 android:text="@string/bobby_sands_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -117,6 +123,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/bobby_sands_text"
                 android:text="@string/bobby_sands_text"
                 android:translationY="30dp" />
 
@@ -130,6 +137,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/clonard_title"
                 android:text="@string/clonard_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -141,6 +149,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/clonard_text"
                 android:text="@string/clonard_text"
                 android:translationY="30dp" />
 
@@ -154,6 +163,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/connolly_title"
                 android:text="@string/connolly_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -165,6 +175,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/connolly_text"
                 android:text="@string/connolly_text"
                 android:translationY="30dp" />
 
@@ -177,6 +188,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/milltown_title"
                 android:text="@string/milltown_title"
                 android:textSize="18sp"
                 android:gravity="center"
@@ -188,6 +200,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/milltown_text"
                 android:text="@string/milltown_text"
                 android:translationY="0dp" />
 
@@ -199,5 +212,5 @@
                 android:translationY="0dp"
                 android:layout_marginBottom="80dp"/>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
