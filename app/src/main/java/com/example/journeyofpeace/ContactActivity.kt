@@ -33,8 +33,8 @@ class ContactActivity : AppCompatActivity(), OnMapReadyCallback {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val email = findViewById<View>(R.id.email)
-        val phone = findViewById<View>(R.id.phone)
+        val email = findViewById<View>(R.id.email_text)
+        val phone = findViewById<View>(R.id.phone_text)
 
         email.setOnClickListener {
             Toast.makeText(this@ContactActivity,
@@ -46,7 +46,8 @@ class ContactActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         phone.setOnClickListener {
-            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "Your Phone_number"))
+            val intent = Intent(Intent.ACTION_CALL,
+                Uri.parse("tel:" + "Your Phone_number"))
             startActivity(intent)
         }
 
