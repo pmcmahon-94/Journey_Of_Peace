@@ -36,6 +36,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/contact_us_text"
         android:text="@string/contact_us_text"
         android:textColor="@color/white"
         android:background="#FF4CAF50"
@@ -57,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/address_title_text"
             android:text="@string/address_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white"
@@ -67,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/address_text"
             android:text="@string/address_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
@@ -78,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/email_title_text"
             android:text="@string/email_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white"
@@ -85,10 +89,10 @@
             android:translationY="30dp" />
 
         <TextView
-            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/email_text"
             android:text="@string/email_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
@@ -100,6 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/phone_title_text"
             android:text="@string/phone_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white"
@@ -107,10 +112,10 @@
             android:translationY="40dp" />
 
         <TextView
-            android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/phone_text"
             android:text="@string/phone_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
@@ -122,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/social_media"
             android:text="@string/social_media_text"
             android:textSize="19sp"
             android:textColor="@color/white"
@@ -143,7 +149,15 @@
             android:layout_weight="3"
             map:cameraTargetLat="54.592120"
             map:cameraTargetLng="-5.962520"
-            />
+            map:cameraTilt="30"
+            map:cameraZoom="13"
+            map:mapType="normal"
+            map:uiCompass="true"
+            map:uiRotateGestures="true"
+            map:uiScrollGestures="true"
+            map:uiTiltGestures="true"
+            map:uiZoomControls="false"
+            map:uiZoomGestures="true" />
     </LinearLayout>
 
 </LinearLayout>
