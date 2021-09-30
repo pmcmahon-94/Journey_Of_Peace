@@ -24,7 +24,7 @@
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".JourneyActivity"
+            android:name=".LocationActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
 
