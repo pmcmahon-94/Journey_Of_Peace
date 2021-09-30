@@ -14,6 +14,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
+/**
+ * Class gives access to the activity_contact layout
+ * Initializes text views and generates intents for email and phone
+ */
 class ContactActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var toolbar: Toolbar
@@ -56,6 +60,10 @@ class ContactActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
+    /**
+     * Adds a marker to the map locating Failte Feirste Thiar building
+     * @param googleMap
+     */
     override fun onMapReady(googleMap: GoogleMap) {
         myMap = googleMap
 
