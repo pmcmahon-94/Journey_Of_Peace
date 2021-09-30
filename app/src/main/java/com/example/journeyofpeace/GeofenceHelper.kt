@@ -10,11 +10,19 @@ import android.content.Intent
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.location.GeofenceStatusCodes
 
+/**
+ * Class helps build a Geofence and implements the ContextWrapper class
+ *
+ * @param base
+ */
 class GeofenceHelper(base: Context) : ContextWrapper(base) {
 
-    private val TAG = "GeofenceHelper"
     private lateinit var pendingIntent: PendingIntent
 
+    /**
+     * Gets initial Geofence request
+     * @param geofence
+     */
     fun getGeofencingRequest(geofence: Geofence): GeofencingRequest {
         return GeofencingRequest.Builder()
             .addGeofence(geofence)
@@ -22,6 +30,14 @@ class GeofenceHelper(base: Context) : ContextWrapper(base) {
             .build()
     }
 
+    /**
+     * Builds the Geofence using the Builder class
+     *
+     * @param ID
+     * @param latLng
+     * @param radius
+     * @param transitionTypes
+     */
     fun getGeofence( ID: String, latLng: LatLng, radius: Float, transitionTypes: Int): Geofence {
         return Geofence.Builder()
             .setCircularRegion(latLng.latitude, latLng.longitude, radius)
@@ -32,6 +48,10 @@ class GeofenceHelper(base: Context) : ContextWrapper(base) {
             .build()
     }
 
+    /**
+     * Triggers [GeofenceBroadcastReceiver] using a pending intent as long as
+     * pending intent is initialized
+     */
     fun getPendingIntent(): PendingIntent {
         if(this::pendingIntent.isInitialized) {
             return pendingIntent
@@ -42,6 +62,10 @@ class GeofenceHelper(base: Context) : ContextWrapper(base) {
         return pendingIntent
     }
 
+    /**
+     * Generates error message for any possible exceptions
+     * @throws e
+     */
     fun getErrorString(e: Exception): String? {
         if (e is ApiException) {
             when (e.statusCode) {
