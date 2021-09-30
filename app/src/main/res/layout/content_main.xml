@@ -65,26 +65,6 @@
         />
 
     <Button
-        android:id="@+id/journey"
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:background="#4CAF50"
-        android:text="@string/journey"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:translationY="40dp" />
-
-    <Button
-        android:id="@+id/camera"
-        android:layout_width="216dp"
-        android:layout_height="wrap_content"
-        android:background="#4CAF50"
-        android:text="@string/camera"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:translationY="50dp" />
-
-    <Button
         android:id="@+id/locations"
         android:layout_width="216dp"
         android:layout_height="wrap_content"
@@ -92,6 +72,16 @@
         android:text="@string/locations"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:translationY="60dp" />
+        android:translationY="40dp" />
+
+    <Button
+        android:id="@+id/journey"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:text="@string/journey"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:translationY="50dp" />
 
 </LinearLayout>
