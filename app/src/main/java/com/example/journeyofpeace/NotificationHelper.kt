@@ -16,8 +16,6 @@ import java.util.*
 
 class NotificationHelper(base: Context) : ContextWrapper(base) {
 
-    private val TAG = "NotificationHelper"
-
     private val CHANNEL_NAME = "High priority channel"
     private val CHANNEL_ID = "com.example.notifications$CHANNEL_NAME"
 
@@ -25,6 +23,10 @@ class NotificationHelper(base: Context) : ContextWrapper(base) {
         createChannels()
     }
 
+    /**
+     * Implements a notification channel and attributes required to occur
+     * when a notification is generated
+     */
     @RequiresApi(api = Build.VERSION_CODES.O)
     private fun createChannels() {
         val notificationChannel =
@@ -38,19 +40,22 @@ class NotificationHelper(base: Context) : ContextWrapper(base) {
         manager.createNotificationChannel(notificationChannel)
     }
 
+    /**
+     * Activates notification through an intent and builds the notification display.
+     *
+     * @param title
+     * @param body
+     * @param activityName
+     */
     fun sendHighPriorityNotification(title: String?, body: String?, activityName: Class<*>?) {
         val intent = Intent(this, activityName)
         val pendingIntent =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                getActivity(this, 267, intent, FLAG_UPDATE_CURRENT)
-            } else {
-                TODO("VERSION.SDK_INT < S")
-            }
+            getActivity(this, 267, intent, FLAG_UPDATE_CURRENT)
         val notification: Notification =
             NotificationCompat.Builder(this, CHANNEL_ID)
                 //.setContentTitle(title)
                 //.setContentText(body)
-                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setStyle(NotificationCompat.BigTextStyle().setSummaryText("summary")
                     .setBigContentTitle(title).bigText(body))
