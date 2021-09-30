@@ -1,20 +1,14 @@
 package com.example.journeyofpeace
 
-import android.app.Activity
-import android.view.Gravity
-import androidx.appcompat.widget.Toolbar
-import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.DrawerActions
 import androidx.test.espresso.contrib.DrawerMatchers.isClosed
-import androidx.test.espresso.contrib.DrawerMatchers.isOpen
-import androidx.test.espresso.contrib.NavigationViewActions
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.espresso.contrib.DrawerActions
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -70,17 +64,17 @@ class MainActivityAndroidTest {
     @Test
     fun navigateToJourneyActivity(){
         onView(withId(R.id.journey)).perform(click())
-        onView(withId(R.id.layout_journey)).check(matches(isDisplayed()))
+        onView(withId(R.id.layout_map)).check(matches(isDisplayed()))
     }
 
     // Test if location button clicked opens correct activity. Check if activity opens, it is visible
     @Test
     fun navigateToLocationActivity(){
         onView(withId(R.id.locations)).perform(click())
-        onView(withId(R.id.layout_map)).check(matches(isDisplayed()))
+        onView(withId(R.id.layout_location)).check(matches(isDisplayed()))
     }
 
-    // Test if location button clicked opens correct activity. Check if activity opens, it is visible
+    // Test if Home item clicked opens correct activity. Check if activity opens, it is visible
     @Test
     fun navigationToolbarActivity(){
         onView(withId(R.id.drawerLayout))
@@ -88,9 +82,10 @@ class MainActivityAndroidTest {
             .perform(DrawerActions.open())
         onView(withId(R.id.nav_view)).check(matches(isDisplayed()))
         onView(withId(R.id.Home)).perform(click())
-        onView(withId(R.id.about_us)).perform(click())
+        onView(withId(R.id.layout_main_activity)).check(matches(isDisplayed()))
     }
 
+    // Test if about item clicked opens correct activity. Check if activity opens, it is visible
     @Test
     fun navigationToolbarAboutActivity(){
         onView(withId(R.id.drawerLayout))
@@ -101,6 +96,7 @@ class MainActivityAndroidTest {
         onView(withId(R.id.about_activity)).check(matches(isDisplayed()))
     }
 
+    // Test if contact item clicked opens correct activity. Check if activity opens, it is visible
     @Test
     fun navigationToolbarContactActivity(){
         onView(withId(R.id.drawerLayout))
