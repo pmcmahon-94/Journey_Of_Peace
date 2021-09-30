@@ -26,6 +26,13 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.location.Geofence
 
+/**
+ * An activity that generates a map if permission is accepted for location.
+ * Markers are added to the map at each location of interest.
+ * Geofence added to markers with a radius to trigger a notification at each location.
+ * Permission for [Manifest.permission.ACCESS_FINE_LOCATION] is requested at run
+ * time. If the permission has not been granted, the Activity is finished with an error message.
+ */
 class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
     GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
     ActivityCompat.OnRequestPermissionsResultCallback {
@@ -33,12 +40,16 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
     private lateinit var toolbar: Toolbar
     private lateinit var myMap: GoogleMap
     private lateinit var mapFragment: SupportMapFragment
-    lateinit var geofencingClient: GeofencingClient
-    lateinit var geofenceHelper: GeofenceHelper
+    private lateinit var geofencingClient: GeofencingClient
+    private lateinit var geofenceHelper: GeofenceHelper
     private val TAG = "MapsActivity"
 
+    /**
+     * Constants indicating the radius of each geofence
+     * Cemetery required larger radius due to the area it covers
+     */
     private val GEOFENCE_RADIUS = 60
-    private val GEOFENCE_RADIUS_CEMETERY = 1613
+    private val GEOFENCE_RADIUS_CEMETERY = 600
 
     private val GEOFENCE_ID = "SOME_GEOFENCE_ID"
 
@@ -48,6 +59,9 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
      */
     private var permissionDenied = false
 
+    /**
+     * Latitude and longitude added to each location for markers
+     */
     private val bSands = LatLng(54.5979, -5.9528)
     private val connCentre = LatLng(54.5902, -5.9678)
     private val clonMonastery = LatLng(54.6000, -5.9571)
@@ -70,8 +84,6 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        //fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
         mapFragment =
             supportFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
@@ -106,30 +118,41 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
         return false
     }
 
+    /**
+     * generates message when location is clicked on map
+     *
+     * @param location
+     */
     override fun onMyLocationClick(location: Location) {
         Toast.makeText(this, "Current location:\n$location", Toast.LENGTH_LONG).show()
     }
 
+    /**
+     * Enables the my location layer if the permission has been granted.
+     * If permission is denied display an error message.
+     * Display the missing permission error dialog when the fragments resume.
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode != FINE_LOCATION_PERMISSION_REQUEST_CODE) {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
             return
         }
         if (isPermissionGranted(permissions, grantResults, Manifest.permission.ACCESS_FINE_LOCATION)) {
-            // Enable the my location layer if the permission has been granted.
             enableMyLocation()
         } else {
-            // Permission was denied. Display an error message
-            // Display the missing permission error dialog when the fragments resume.
             permissionDenied = true
         }
         if (requestCode == BACKGROUND_LOCATION_PERMISSION_REQUEST_CODE) {
             if (isPermissionGranted(permissions, grantResults, Manifest.permission.ACCESS_BACKGROUND_LOCATION)) {
                 //We have the permission
-                Toast.makeText(this, "You can add geofences...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "You can add geofences", Toast.LENGTH_SHORT).show()
             } else {
                 //We do not have the permission..
-                Toast.makeText(this, "Background location access is neccessary for geofences to trigger...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Background location access is necessary for geofences to trigger", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -151,10 +174,14 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
     }
 
     /**
+     * This callback is triggered when the map is ready to be used.
      * When the map is ready for use, markers will appear for each of the locations
      * defined below. The locations are initialised using their Longitude and Latitude.
      * Markers are then set up for each location with a title appearing when user taps
      * on the marker within the map fragment.
+     * Geofence added to each location to trigger transitions and generate notifications
+     *
+     * @param googleMap
      */
     override fun onMapReady(googleMap: GoogleMap) {
 
@@ -219,6 +246,12 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
         markerCemetary.tag = 0
     }
 
+    /**
+     * Creates a radius defined by a circle on the map around each location of interest
+     *
+     * @param latLng
+     * @param radius
+     */
     private fun createCircle(latLng: LatLng, radius: Int){
         val circleOptions = CircleOptions()
         circleOptions.center(latLng)
@@ -229,6 +262,12 @@ class MapActivity: AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListene
         myMap.addCircle(circleOptions)
     }
 
+    /**
+     * creates a geofence using the GeofenceHelper class to trigger transitions
+     *
+     * @param latLng
+     * @param radius
+     */
     @SuppressLint("MissingPermission")
     private fun addGeofence(latLng: LatLng, radius: Int) {
         val geofence = geofenceHelper.getGeofence(GEOFENCE_ID,
