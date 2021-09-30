@@ -11,7 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-
+/**
+ * Class triggers the main view of the app.
+ * Navigation drawer is initialized. Buttons added and initialized to activate
+ * other activities in the app.
+ */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
@@ -21,6 +25,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        onStart()
 
         //create toolbar
         toolbar = findViewById(R.id.toolbar)
@@ -37,21 +43,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val journey = findViewById<View>(R.id.journey) as Button
         val locations = findViewById<View>(R.id.locations) as Button
-        val camera = findViewById<View>(R.id.camera) as Button
 
         journey.setOnClickListener {
             Toast.makeText(this@MainActivity,
                 "journey",
                 Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, JourneyActivity::class.java)
-            startActivity(intent)
-        }
-
-        camera.setOnClickListener {
-            Toast.makeText(this@MainActivity,
-                "camera",
-                Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, ConnollyActivity::class.java)
+            val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
 
@@ -59,12 +56,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Toast.makeText(this@MainActivity,
                 "locations",
                 Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MapActivity::class.java)
+            val intent = Intent(this, LocationActivity::class.java)
             startActivity(intent)
         }
 
     }
 
+    /**
+     * Takes each item from the navigation drawer and starts an activity
+     * @param item
+     */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         //add some event to the menu
         when (item.itemId) {
