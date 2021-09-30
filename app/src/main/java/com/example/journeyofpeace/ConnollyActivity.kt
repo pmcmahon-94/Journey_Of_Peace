@@ -1,19 +1,17 @@
 package com.example.journeyofpeace
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.MediaController
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import android.net.Uri
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ScrollView
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
 
+/**
+ * Gives access to the activity_connolly layout.
+ * Generates a video and sets a media controller anchored
+ * to video for purpose of playing content.
+ */
 class ConnollyActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
