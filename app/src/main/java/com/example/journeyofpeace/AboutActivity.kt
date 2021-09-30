@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 
+/**
+ * Gives access to the activity_about layout
+ * @see [R.layout.activity_about]
+ */
 class AboutActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
