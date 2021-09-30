@@ -8,7 +8,6 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiSelector
-import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,7 +28,7 @@ class MapActivityAndroidTest {
 
     }
 
-    // Test to check marker is correct on map and contains appropriate description
+    // The following tests to check marker is correct on map and contains appropriate description
     @Test
     fun isRadioFailteMarkerCorrect(){
 
