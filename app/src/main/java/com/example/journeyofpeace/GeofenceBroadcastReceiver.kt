@@ -8,13 +8,19 @@ import android.widget.Toast
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingEvent
 
+/**
+ * Class generates an instance of NotificationHelper and GeofencingEvent that triggers
+ * a notification to user informing of location being close in proximity
+ */
 class GeofenceBroadcastReceiver : BroadcastReceiver() {
 
     private val TAG = "GeofenceBroadcastReceiver"
 
+    /**
+     * This function is called when the BroadcastReceiver is receiving an Intent broadcast.
+     */
     override fun onReceive(context: Context, intent: Intent) {
-        // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
-        //Toast.makeText(context, "geofence triggered", Toast.LENGTH_SHORT).show()
+
         val notificationHelper = NotificationHelper(context)
         val geofencingEvent = GeofencingEvent.fromIntent(intent)
 
@@ -27,8 +33,8 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
         for (geofence: Geofence in geofenceList) {
             Log.d(TAG, "onReceive: " + geofence.requestId)
         }
-        //val location: Location = geofencingEvent.triggeringLocation
 
+        // Unit test that this is true and false
         when (geofencingEvent.geofenceTransition) {
             Geofence.GEOFENCE_TRANSITION_ENTER -> {
                 Toast.makeText(context, "GEOFENCE_TRANSITION_ENTER", Toast.LENGTH_SHORT).show()
